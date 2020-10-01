@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="jumbotron bg-primary">
+		<div class="container">
+			<h1 class="text-white" style="font-size: 3rem">Partez en vacances.</h1>
+			<p style="font-size: 1.4rem; color: #EEE;">Profitez de nos offres pour les vacances de la Toussaint.</p>
+      <a href="#" style="font-size: 1.1rem;" class="btn btn-light mt-3">à partir de 299€ TTC</a>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+
+				<div class="card shadow-sm flex-row">
+          <div class="img-container">
+            <img src="{{ asset("/assets/images/01.jpg")}}" class="card-img-top">
+          </div>
+					<div class="card-body">
+						<h2 class="card-title">Circuit Stockholm</h2>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary"><i class="fas fa-paper-plane mr-2"></i>Consulter l'itinéraire</a>
+					</div>
+				</div>
+
+        <div class="card shadow-sm flex-row mt-4">
+          <div class="img-container">
+            <img src="{{ asset("/assets/images/02.jpg")}}" class="card-img-top">
+          </div>
+					<div class="card-body">
+						<h2 class="card-title">Circuit Poudlard</h2>
+						<p class="card-text">Participez à la rentrée des petits 6ème avec leur gros cartable à Poudlard.</p>
+						<a href="#" class="btn btn-primary"><i class="fas fa-paper-plane mr-2"></i>Consulter l'itinéraire</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}

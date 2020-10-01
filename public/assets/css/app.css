@@ -1,0 +1,10 @@
+body
+{
+    background-color: #f8f8fb;
+}
+
+.img-container
+{
+    width: 300px !important;
+    height: auto;
+}
