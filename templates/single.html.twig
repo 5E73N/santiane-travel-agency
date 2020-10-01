@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="breadcrumb bg-primary">
+		<div class="container">
+			<a href="{{ path("home.index") }}" class="text-white"><i class="fas fa-arrow-left mr-2"></i>Retour</a>
+		</div>
+	</div>
+	<div class="container mt-4">
+		<h1 class="mb-2 font-weight-bold">{{ t.title }}</h1>
+		<div class="row">
+			<div class="col-12">
+				{% for t in travel %}
+                <div class="card mt-4 p-4 border-0">
+					<div class="d-flex">
+						<div class="line"></div>
+						<div class="d-flex flex-column pl-4">
+							<h2 style="font-size: 1.4rem;">{{ t.departure }}</h2>
+							<ul style="list-style-type: none;">
+								<li>Transport:{{ t.type }}</li>
+								<li>Numéro:{{ t.number }}</li>
+								<li>Siège:{{ t.seat }}</li>
+								<li>Porte:{{ t.gate }}</li>
+							</ul>
+							<h2 style="font-size: 1.4rem;">{{ t.arrival }}</h2>
+						</div>
+                        <div class="text-right" style="flex: 1">
+                            <p>Durée: 30mn</p>
+                        </div>
+					</div>
+                </div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

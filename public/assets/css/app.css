@@ -1,10 +1,18 @@
 body
 {
-    background-color: #f8f8fb;
+    background: #f8f8fb;
 }
 
 .img-container
 {
     width: 300px !important;
     height: auto;
+}
+
+.line
+{
+    width: 20px;
+    background: #007bff;
+    border-radius: 5rem;
+    margin: 1.2rem 0;
 }

@@ -13,9 +13,9 @@
 	</head>
 
     <body>
-        <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="#">Santiane</a>
+                <a class="navbar-brand font-weight-bold" style="font-size: 2rem; color: #212529" href="{{ path("home.index") }}">Santiane<span style="font-size: 2rem; color: #FF8F00">.</span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -23,13 +23,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Destinations</a>
+                            <a class="nav-link" href="{{ path("home.index") }}">Home</a>
                         </li>
                     </ul>
-                    <a href="#">Administration</a>
+                    <a class="nav-link" href="{{ path("admin.index") }}">Administration</a>
                 </div>
             </div>
         </nav>

@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\TravelRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraint as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=TravelRepository::class)

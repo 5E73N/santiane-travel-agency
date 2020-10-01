@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<div class="container mt-4">
+		<h1 class="mb-5 pl-4" style="border-left: 6px solid #0062cc;">Gérer les destinations</h1>
+		<div class="text-left">
+			<a href="{{ path("admin.new") }}" class="btn btn-primary mb-4"><i class="fas fa-plus mr-2"></i>Créer une nouvelle destination</a>
+		</div>
+		<table class="table table-striped">
+			<thead class="thead-dark text-white">
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Circuit</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Transport</th>
+					<th scope="col">Départ</th>
+					<th scope="col">Arrivée</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for t in travel %}
+					<tr>
+						<th scope="row">{{ t.id }}</th>
+						<td>{{ t.title }}</td>
+						<td>{{ t.name }}</td>
+						<td>{{ t.type }}</td>
+						<td>{{ t.departure }}</td>
+						<td>{{ t.arrival }}</td>
+						<td>
+							<a href="{{ path("admin.edit", {id: t.id} ) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+							<a href="{{ path("admin.edit", {id: t.id} ) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}
