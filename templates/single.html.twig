@@ -17,15 +17,16 @@
 						<div class="d-flex flex-column pl-4">
 							<h2 style="font-size: 1.4rem;">{{ t.departure }}</h2>
 							<ul style="list-style-type: none;">
-								<li>Transport:{{ t.type }}</li>
-								<li>Numéro:{{ t.number }}</li>
-								<li>Siège:{{ t.seat }}</li>
-								<li>Porte:{{ t.gate }}</li>
+								<li>Transport: {{ t.type }}</li>
+								<li>Numéro: {{ t.number }}</li>
+								<li>Siège: {{ t.seat }}</li>
+								<li>Porte: {{ t.gate }}</li>
 							</ul>
 							<h2 style="font-size: 1.4rem;">{{ t.arrival }}</h2>
 						</div>
                         <div class="text-right" style="flex: 1">
-                            <p>Durée: 30mn</p>
+							<p class="font-weight-bold text-primary" style="font-size: 1.6rem;">{{ t.diffDate }}</p>
+							<p style="font-size: 1rem;">Départ: {{ t.getDepartureDate|date("H:i") }}<i class="fas fa-arrow-right mx-2"></i>Arrivée: {{ t.getArrivalDate|date("H:i") }}</p>
                         </div>
 					</div>
                 </div>

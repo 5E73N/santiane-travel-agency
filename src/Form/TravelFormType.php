@@ -21,7 +21,8 @@ class TravelFormType extends AbstractType
             ->add('seat')
             ->add('gate')
             ->add('baggage_drop')
-        ;
+            ->add('departure_date')
+            ->add('arrival_date');
     }
 
     public function configureOptions(OptionsResolver $resolver)

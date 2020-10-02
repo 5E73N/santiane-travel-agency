@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\TravelRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraint as Assert;
@@ -63,6 +64,16 @@ class Travel
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $baggage_drop;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $departure_date;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $arrival_date;
 
     public function getId(): ?int
     {
@@ -175,5 +186,49 @@ class Travel
         $this->baggage_drop = $baggage_drop;
 
         return $this;
+    }
+
+    public function getDepartureDate(): ?\DateTimeInterface
+    {
+        return $this->departure_date;
+    }
+
+    public function setDepartureDate(\DateTimeInterface $departure_date): self
+    {
+        $this->departure_date = $departure_date;
+
+        return $this;
+    }
+
+    public function getArrivalDate(): ?\DateTimeInterface
+    {
+        return $this->arrival_date;
+    }
+
+    public function setArrivalDate(\DateTimeInterface $arrival_date): self
+    {
+        $this->arrival_date = $arrival_date;
+
+        return $this;
+    }
+
+    public function diffDate()
+    {
+
+        $departure = $this->getDepartureDate();
+        $arrival = $this->getArrivalDate();
+        $interval = $departure->diff($arrival);
+
+        if($interval->h === 0)
+        {
+            return $interval->i . "min";
+        }
+
+        elseif($interval->i === 0)
+        {
+            return $interval->h . "h";
+        }
+
+        return $interval->h . "h" . $interval->i;
     }
 }
